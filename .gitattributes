@@ -4,5 +4,7 @@
 *.tar	-text
 *.gz	-text
 *.npy	-text
-*.h5	-text
-*.hdf5	-text
+
+# lfs support
+*.h5 	filter=lfs diff=lfs merge=lfs -text
+*.hdf5	filter=lfs diff=lfs merge=lfs -text
