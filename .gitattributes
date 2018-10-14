@@ -1,0 +1,8 @@
+*	text=auto
+*.txt	text
+*.py	text
+*.tar	-text
+*.gz	-text
+*.npy	-text
+*.h5	-text
+*.hdf5	-text
