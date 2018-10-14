@@ -1,5 +1,6 @@
 # tag::dl_agent_imports[]
 import numpy as np
+import h5py
 
 from dlgo.agent.base import Agent
 from dlgo.agent.helpers import is_point_an_eye
@@ -60,6 +61,8 @@ class DeepLearningAgent(Agent):
 
 # tag::dl_agent_serialize[]
     def serialize(self, h5file):
+        if isinstance(h5file, str):
+            h5file=h5py.File(h5file, 'w')
         h5file.create_group('encoder')
         h5file['encoder'].attrs['name'] = self.encoder.name()
         h5file['encoder'].attrs['board_width'] = self.encoder.board_width
